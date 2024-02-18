@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(125, 97, 240);
+}
+
+.mainContainer {
+    height: 100vh;
+    width: 727.5px;
+    background-color: rgb(127, 146, 239);
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    flex-flow: row wrap;
+    border-radius: 5px;
+}
+
+.mainContainer div {
+    background-color: rgb(85, 85, 168);
+    height: 40px;
+    width: 40px;
+    flex: 0 0 auto;
+}
+
+
+
+.mainContainer div:hover {
+    background-color: blue;
+}
