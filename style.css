@@ -9,6 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(125, 97, 240);
+    flex-flow: column-reverse;
+    gap: 5px;
+    padding: 5px;
 }
 
 .mainContainer {
@@ -27,10 +30,4 @@ body {
     height: 40px;
     width: 40px;
     flex: 0 0 auto;
-}
-
-
-
-.mainContainer div:hover {
-    background-color: blue;
 }
