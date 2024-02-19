@@ -15,19 +15,14 @@ body {
 }
 
 .mainContainer {
-    height: 100vh;
-    width: 727.5px;
+    height: 960px;
+    width: 960px;
     background-color: rgb(127, 146, 239);
     display: flex;
-    gap: 5px;
-    padding: 5px;
-    flex-flow: row wrap;
-    border-radius: 5px;
+    flex-flow: column;
+    margin-bottom: 5px;
 }
 
-.mainContainer div {
-    background-color: rgb(85, 85, 168);
-    height: 40px;
-    width: 40px;
-    flex: 0 0 auto;
+.box {
+    outline: 1px solid white;
 }

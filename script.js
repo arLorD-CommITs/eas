@@ -8,25 +8,41 @@ htmlBody.appendChild(mainContainer);
 htmlBody.appendChild(button);
 mainContainer.setAttribute('class', 'mainContainer');
 
-let nOfBoxes = 256;
+let rows = 16;
+let columns = 16;
 
-function createGrid(nOfBoxes) {
-    for (let i = 0; i < nOfBoxes; i++) {
-        let box = document.createElement('div');
-        mainContainer.appendChild(box);
+function createGrid() {
+    for (let i = 0; i < rows; i++) {
+        let row = document.createElement('div');
+        mainContainer.appendChild(row);
+        row.style.flex = '1 0 auto';
+        row.style.display = 'flex';
+
+        for (let j = 0; j < columns; j++) {
+            let column = document.createElement('div');
+            mainContainer.childNodes[i].appendChild(column);
+            column.style.flex = '1 0 auto';
+            column.setAttribute('class', 'box');
+
+        }
     }
+    
 }
 
-createGrid(nOfBoxes);
 
 
-const boxes = document.querySelectorAll('.mainContainer div');
+createGrid();
+
+const boxes = document.querySelectorAll('.mainContainer .box');
 boxes.forEach(function(item) {
     item.addEventListener('mouseover', function () {
         let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
         this.style.backgroundColor = randomColor;
     });
 });
+
+
+
 
 button.addEventListener('click', function() {
     let popUp = prompt('How many squares per side would you like the new grid to have?');
@@ -41,8 +57,10 @@ button.addEventListener('click', function() {
     }
 });
 
+
+let rowNodeList = document.querySelectorAll('.mainContainer > div');
 function removeBoxes() {
-    for ( let i = boxes.length - 1; i >= 0; i-- ) {
-        boxes[i].remove()
+    for ( let i = rowNodeList.length - 1 ; i >= 0 ; i-- ) {
+        rowNodeList[i].remove();
     }
 }
